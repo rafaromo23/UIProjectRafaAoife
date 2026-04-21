@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson {{ lesson_num }}: {{ lesson.title }} — False 9</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #1a7a3c;
+      --green-light: #25a554;
+      --green-dark: #0e4e26;
+      --white: #f5f5f0;
+      --off-white: #e8e8e0;
+      --yellow: #f0d940;
+      --black: #0d0d0d;
+      --surface: #141414;
+      --surface2: #1c1c1c;
+      --border: rgba(255,255,255,0.08);
+      --gray: #888880;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* Top nav bar */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
+      background: rgba(13,13,13,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      z-index: 100;
+    }
+
+    .topbar-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: var(--yellow);
+      text-decoration: none;
+    }
+
+    .progress-track {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .progress-bar-wrap {
+      width: 140px;
+      height: 3px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--green-light);
+      border-radius: 2px;
+      transition: width 0.5s ease;
+    }
+
+    .progress-text {
+      font-size: 12px;
+      color: var(--gray);
+      white-space: nowrap;
+    }
+
+    /* Main layout */
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 96px 24px 120px;
+    }
+
+    /* Lesson header */
+    .lesson-header {
+      margin-bottom: 48px;
+      animation: fadeIn 0.5s ease both;
+    }
+
+    .lesson-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 12px;
+    }
+
+    .lesson-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(42px, 8vw, 72px);
+      line-height: 1;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .lesson-subtitle {
+      font-size: 16px;
+      color: var(--gray);
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    /* Visual card */
+    .visual-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 32px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      animation: fadeIn 0.5s 0.1s ease both;
+    }
+
+    .visual-icon {
+      font-size: 52px;
+      flex-shrink: 0;
+    }
+
+    .visual-caption {
+      font-size: 14px;
+      color: var(--gray);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* Diagram */
+    .diagram-block {
+      margin-bottom: 36px;
+      animation: fadeIn 0.5s 0.12s ease both;
+    }
+
+    .diagram-img {
+      width: 100%;
+      max-width: 420px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .diagram-caption {
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray);
+      font-style: italic;
+      margin-top: 12px;
+    }
+
+    /* Number chart */
+    .number-chart {
+      margin-bottom: 36px;
+      animation: fadeIn 0.5s 0.12s ease both;
+    }
+
+    .number-chart-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 14px;
+    }
+
+    .number-row { display: flex; flex-direction: column; gap: 6px; }
+
+    .number-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 16px;
+      border-radius: 4px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .number-item.highlight {
+      border-color: rgba(240,217,64,0.4);
+      background: rgba(240,217,64,0.06);
+    }
+
+    .num-badge {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      width: 36px;
+      text-align: center;
+      flex-shrink: 0;
+      color: var(--gray);
+    }
+
+    .number-item.highlight .num-badge { color: var(--yellow); }
+
+    .num-group-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      width: 80px;
+      flex-shrink: 0;
+    }
+
+    .num-group-label.gk  { color: #34d399; }
+    .num-group-label.def { color: #5b9cf6; }
+    .num-group-label.mid { color: #a78bfa; }
+    .num-group-label.fwd { color: #f87171; }
+
+    .num-desc { font-size: 13px; color: rgba(245,245,240,0.7); line-height: 1.4; }
+    .number-item.highlight .num-desc { color: var(--white); font-weight: 400; }
+
+    /* Body paragraphs */
+    .lesson-body {
+      animation: fadeIn 0.5s 0.15s ease both;
+    }
+
+    .lesson-body p {
+      font-size: 17px;
+      line-height: 1.75;
+      color: rgba(245,245,240,0.88);
+      margin-bottom: 22px;
+      font-weight: 300;
+    }
+
+    .lesson-body p strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .lesson-body p em {
+      color: var(--yellow);
+      font-style: italic;
+    }
+
+    /* Key idea callout */
+    .key-idea {
+      background: rgba(26, 122, 60, 0.12);
+      border-left: 3px solid var(--green-light);
+      border-radius: 0 4px 4px 0;
+      padding: 20px 24px;
+      margin: 36px 0;
+      animation: fadeIn 0.5s 0.2s ease both;
+    }
+
+    .key-idea-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 8px;
+    }
+
+    .key-idea-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--off-white);
+      font-weight: 400;
+    }
+
+    /* Dot progress row */
+    .dot-progress {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 32px;
+      animation: fadeIn 0.5s 0.25s ease both;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 1.5px solid rgba(255,255,255,0.15);
+      transition: all 0.3s;
+    }
+
+    .dot.done {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .dot.current {
+      background: var(--yellow);
+      border-color: var(--yellow);
+      transform: scale(1.3);
+    }
+
+    /* Navigation */
+    .nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 48px;
+      animation: fadeIn 0.5s 0.3s ease both;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 14px 24px;
+      border-radius: 3px;
+      transition: all 0.2s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-prev {
+      background: transparent;
+      color: var(--gray);
+      border: 1px solid var(--border);
+    }
+
+    .btn-prev:hover {
+      background: var(--surface2);
+      color: var(--white);
+    }
+
+    .btn-next {
+      background: var(--green);
+      color: var(--white);
+      border: 1px solid transparent;
+      flex: 1;
+      justify-content: center;
+      font-size: 15px;
+    }
+
+    .btn-next:hover {
+      background: var(--green-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37,165,84,0.35);
+    }
+
+    .btn-complete {
+      background: var(--yellow);
+      color: var(--black);
+      border: 1px solid transparent;
+      flex: 1;
+      justify-content: center;
+      font-size: 15px;
+    }
+
+    .btn-complete:hover {
+      background: #f5e040;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(240,217,64,0.4);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 520px) {
+      .visual-card { flex-direction: column; text-align: center; }
+      .nav-row { flex-direction: column; }
+      .btn-next, .btn-complete, .btn-prev { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top navigation bar -->
+  <nav class="topbar">
+    <a href="/" class="topbar-logo">FALSE 9</a>
+    <div class="progress-track">
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" style="width: {{ (lesson_num / total) * 100 }}%"></div>
+      </div>
+      <span class="progress-text">{{ lesson_num }}&nbsp;/&nbsp;{{ total }}</span>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <!-- Dot progress -->
+    <div class="dot-progress">
+      {% for i in range(1, total + 1) %}
+        <div class="dot {% if i < lesson_num %}done{% elif i == lesson_num %}current{% endif %}"></div>
+      {% endfor %}
+    </div>
+
+    <!-- Header -->
+    <header class="lesson-header">
+      <div class="lesson-label">Lesson {{ lesson_num }} of {{ total }}</div>
+      <h1 class="lesson-title">{{ lesson.title }}</h1>
+      <p class="lesson-subtitle">{{ lesson.subtitle }}</p>
+    </header>
+
+    <!-- Visual -->
+    <div class="visual-card">
+      <div class="visual-icon">{{ lesson.visual }}</div>
+      <div class="visual-caption">{{ lesson.visual_caption }}</div>
+    </div>
+
+    <!-- Number chart (lesson 1 only) -->
+    {% if lesson.number_chart %}
+    <div class="number-chart">
+      <div class="number-chart-title">⚽ The Numbered Positions</div>
+      <div class="number-row">
+        <div class="number-item"><span class="num-badge">#1</span><span class="num-group-label gk">Goalkeeper</span><span class="num-desc">Guards the goal. The only player who can use their hands.</span></div>
+        <div class="number-item"><span class="num-badge">#2–3</span><span class="num-group-label def">Defenders</span><span class="num-desc">Right and left backs — defend the wide areas of the pitch.</span></div>
+        <div class="number-item"><span class="num-badge">#4–5</span><span class="num-group-label def">Defenders</span><span class="num-desc">Center backs — the heart of the defense, stopping opposing strikers.</span></div>
+        <div class="number-item"><span class="num-badge">#6</span><span class="num-group-label mid">Midfielder</span><span class="num-desc">Defensive or holding midfielder — shields the back four.</span></div>
+        <div class="number-item"><span class="num-badge">#7–8</span><span class="num-group-label mid">Midfielders</span><span class="num-desc">Box-to-box midfielders — link defense and attack, cover ground.</span></div>
+        <div class="number-item"><span class="num-badge">#10</span><span class="num-group-label mid">Midfielder</span><span class="num-desc">The playmaker — creates chances, plays between the lines.</span></div>
+        <div class="number-item"><span class="num-badge">#7 / 11</span><span class="num-group-label fwd">Forwards</span><span class="num-desc">Wingers — attack from wide, cross or cut inside to score.</span></div>
+        <div class="number-item highlight"><span class="num-badge">#9</span><span class="num-group-label fwd">Forward</span><span class="num-desc">The center forward — main striker. Stays high, scores goals. This is the position we're here to talk about.</span></div>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Diagram -->
+    {% if lesson.diagram %}
+    <div class="diagram-block">
+      <img src="{{ url_for('static', filename=lesson.diagram) }}" alt="False 9 formation diagram" class="diagram-img">
+      <p class="diagram-caption">{{ lesson.diagram_caption }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Body -->
+    <div class="lesson-body">
+      {% for paragraph in lesson.body %}
+        <p>{{ paragraph | safe }}</p>
+      {% endfor %}
+    </div>
+
+    <!-- Key Idea -->
+    <div class="key-idea">
+      <div class="key-idea-label">Key Takeaway</div>
+      <div class="key-idea-text">{{ lesson.key_idea }}</div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-row">
+      {% if has_prev %}
+        <a href="/learn/{{ prev_num }}" class="nav-btn btn-prev">← Previous</a>
+      {% endif %}
+
+      {% if has_next %}
+        <a href="/learn/{{ next_num }}" class="nav-btn btn-next" id="next-btn">
+          Next Lesson →
+        </a>
+      {% else %}
+        <a href="/quiz/1" class="nav-btn btn-complete" id="complete-btn">
+          Take the Quiz 🧠
+        </a>
+      {% endif %}
+    </div>
+
+  </main>
+
+  <script>
+    // Record time spent on this lesson
+    const lessonNum = {{ lesson_num }};
+    const enteredAt = Date.now();
+
+    // On nav away, we could log time — for now stored server-side on page load
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const timeSpent = Math.round((Date.now() - enteredAt) / 1000);
+        console.log(`Lesson ${lessonNum}: spent ${timeSpent}s`);
+      });
+    });
+  </script>
+
+</body>
+</html>
