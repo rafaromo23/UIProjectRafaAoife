@@ -181,7 +181,9 @@ def learn(lesson_num):
         has_next=has_next,
         has_prev=has_prev,
         next_num=lesson_num + 1,
-        prev_num=lesson_num - 1
+        prev_num=lesson_num - 1,
+        all_lessons=LESSONS,
+        visited_lessons=session.get("visited_lessons", {})
     )
 
 

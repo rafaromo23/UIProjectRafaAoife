@@ -4,109 +4,113 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Course Complete — False 9</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
   <style>
     :root {
-      --green: #1a7a3c;
-      --green-light: #25a554;
-      --white: #f5f5f0;
-      --yellow: #f0d940;
-      --black: #0d0d0d;
-      --gray: #888880;
-      --border: rgba(255,255,255,0.08);
-      --surface: #141414;
+      --white: #FFFFFF;
+      --green: #2D6A4F;
+      --charcoal: #1E1E1E;
+      --ash: #E8E8E8;
+      --deep-forest: #1B4332;
+      --green-tint: #D8F3DC;
+      --muted: #666;
     }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      background: var(--black);
-      color: var(--white);
-      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--charcoal);
+      font-family: Arial, 'Helvetica Neue', sans-serif;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
     }
 
     .bg {
       position: fixed;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 40%, rgba(26,122,60,0.18) 0%, transparent 70%);
+      background: radial-gradient(ellipse at 50% 30%, rgba(45,106,79,0.07) 0%, transparent 60%);
       z-index: 0;
     }
 
     .content {
       position: relative;
       z-index: 1;
-      max-width: 600px;
+      max-width: 580px;
       width: 100%;
-      padding: 40px 24px;
+      padding: 48px 24px;
       text-align: center;
     }
 
     .trophy {
-      font-size: 72px;
-      margin-bottom: 24px;
-      animation: bounceIn 0.6s ease both;
+      font-size: 64px;
+      margin-bottom: 20px;
       display: block;
+      animation: bounceIn 0.6s ease both;
     }
 
     h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(56px, 12vw, 100px);
+      font-family: 'Arial Black', Arial, sans-serif;
+      font-weight: 900;
+      font-size: clamp(44px, 9vw, 80px);
       line-height: 0.9;
-      letter-spacing: 2px;
+      text-transform: uppercase;
+      letter-spacing: -1px;
       animation: fadeUp 0.5s 0.15s ease both;
     }
 
-    h1 .line1 { color: var(--yellow); display: block; }
-    h1 .line2 { color: var(--white); display: block; }
+    h1 .line1 { color: var(--green);    display: block; }
+    h1 .line2 { color: var(--charcoal); display: block; }
 
     .subtitle {
-      font-size: 16px;
-      font-weight: 300;
-      color: var(--gray);
-      font-style: italic;
-      margin: 20px 0 40px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 22px 0 36px;
       animation: fadeUp 0.5s 0.25s ease both;
     }
 
     .lessons-visited {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 24px;
-      margin-bottom: 36px;
+      background: var(--white);
+      border: 1.5px solid var(--ash);
+      border-radius: 3px;
+      padding: 22px;
+      margin-bottom: 32px;
       text-align: left;
       animation: fadeUp 0.5s 0.35s ease both;
     }
 
     .lessons-visited h3 {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 3px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--green-light);
-      margin-bottom: 16px;
+      color: var(--green);
+      margin-bottom: 14px;
     }
 
     .lesson-row {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 14px;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--ash);
+      font-size: 13px;
+      color: var(--charcoal);
     }
 
     .lesson-row:last-child { border-bottom: none; }
 
-    .check { color: var(--green-light); font-size: 16px; }
-    .lesson-name { color: var(--white); flex: 1; }
+    .check {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+    }
 
     .btn-row {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       justify-content: center;
       flex-wrap: wrap;
       animation: fadeUp 0.5s 0.45s ease both;
@@ -117,44 +121,38 @@
       align-items: center;
       gap: 8px;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      padding: 14px 28px;
-      border-radius: 3px;
-      transition: all 0.2s;
+      font-family: 'Arial Black', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 13px 28px;
+      border-radius: 2px;
+      transition: background 0.2s;
     }
 
     .btn-primary {
       background: var(--green);
       color: var(--white);
     }
-
-    .btn-primary:hover {
-      background: var(--green-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(37,165,84,0.35);
-    }
+    .btn-primary:hover { background: var(--deep-forest); }
 
     .btn-secondary {
       background: transparent;
-      color: var(--gray);
-      border: 1px solid var(--border);
+      color: var(--muted);
+      border: 1.5px solid var(--ash);
     }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.05);
-      color: var(--white);
-    }
+    .btn-secondary:hover { background: var(--ash); color: var(--charcoal); }
 
     @keyframes bounceIn {
-      0% { opacity: 0; transform: scale(0.3); }
-      60% { transform: scale(1.1); }
+      0%   { opacity: 0; transform: scale(0.3); }
+      60%  { transform: scale(1.1); }
       100% { opacity: 1; transform: scale(1); }
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -170,18 +168,18 @@
 
     {% if visited %}
     <div class="lessons-visited">
-      <h3>Lessons completed</h3>
+      <h3>Lessons Completed</h3>
       {% for num, data in visited.items() | sort %}
         <div class="lesson-row">
           <span class="check">✓</span>
-          <span class="lesson-name">{{ data.lesson_title }}</span>
+          <span>{{ data.lesson_title }}</span>
         </div>
       {% endfor %}
     </div>
     {% endif %}
 
     <div class="btn-row">
-      <a href="/learn/1" class="btn btn-primary">Review from start ↺</a>
+      <a href="/learn/1" class="btn btn-primary">Review from Start ↺</a>
       <a href="/" class="btn btn-secondary">← Home</a>
     </div>
   </div>
