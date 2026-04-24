@@ -100,18 +100,6 @@ QUIZ = [
     },
     {
         "id": 2,
-        "question": "Which group of players does the #6 typically belong to?",
-        "options": [
-            "Goalkeepers",
-            "Defenders or defensive midfielders",
-            "Attacking midfielders",
-            "Wingers"
-        ],
-        "answer": 1,
-        "explanation": "Numbers 4–6 are typically defenders or defensive midfielders. The #6 in particular is often a holding midfielder whose job is to protect the back line."
-    },
-    {
-        "id": 3,
         "question": "What does the 'False' in False 9 mean?",
         "options": [
             "The player is pretending to be injured",
@@ -121,6 +109,18 @@ QUIZ = [
         ],
         "answer": 2,
         "explanation": "The 'False' refers to the deception — the #9 isn't where defenders expect them to be. By dropping into midfield, they break the rules defenders are trained to follow."
+    },
+    {
+        "id": 3,
+        "question": "What happens when a center-back chooses NOT to follow the False 9 as they drop deep into midfield?",
+        "options": [
+            "The False 9 goes offside",
+            "The False 9 picks up the ball with time and space to create danger",
+            "The defense automatically wins",
+            "The wingers are forced to defend"
+        ],
+        "answer": 1,
+        "explanation": "If the center-back doesn't follow, the False 9 receives the ball in space between the lines. With time and space, they can turn, drive forward, or play a pass that splits the defense — creating a dangerous attacking opportunity."
     },
     {
         "id": 4,
