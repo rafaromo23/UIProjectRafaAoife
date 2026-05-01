@@ -331,22 +331,32 @@
     }
 
     /* ── Diagram ── */
-    .diagram-block { margin-bottom: 36px; }
+    .diagram-block {
+      margin: 0 0 32px;
+      padding: 16px;
+      background: #fafafa;
+      border: 1px solid var(--ash);
+      border-radius: 4px;
+    }
 
     .diagram-img {
       width: 100%;
-      max-width: 420px;
+      max-width: 560px;
       display: block;
       margin: 0 auto;
       border-radius: 4px;
       border: 1px solid var(--ash);
     }
 
+    .diagram-img.half-size {
+      max-width: 280px;
+    }
+
     .diagram-caption {
       text-align: center;
       font-size: 12px;
       color: var(--muted);
-      margin-top: 10px;
+      margin-top: 12px;
       line-height: 1.5;
     }
 
@@ -423,6 +433,41 @@
 
     .lesson-body p strong { color: var(--charcoal); font-weight: 700; }
     .lesson-body p em    { color: var(--green); font-style: italic; }
+
+    /* ── Video embed ── */
+    .video-block {
+      margin: 24px 0 34px;
+      padding: 16px;
+      background: #fafafa;
+      border: 1px solid var(--ash);
+      border-radius: 4px;
+    }
+
+    .video-frame-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border: 1px solid var(--ash);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .video-frame-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 12px;
+      line-height: 1.5;
+    }
 
     /* ── Key idea callout ── */
     .key-idea {
@@ -584,11 +629,13 @@
         <p class="lesson-subtitle">{{ lesson.subtitle }}</p>
       </header>
 
-      <!-- Visual card -->
-      <div class="visual-card">
-        <div class="visual-icon">{{ lesson.visual }}</div>
-        <div class="visual-caption">{{ lesson.visual_caption }}</div>
+      <!-- Diagram -->
+      {% if lesson.diagram %}
+      <div class="diagram-block">
+        <img src="{{ url_for('static', filename=lesson.diagram) }}" alt="False 9 formation diagram" class="diagram-img{% if lesson.diagram in ['numberedpossoccer.jpg', 'false9_diagram.png'] %} half-size{% endif %}">
+        <p class="diagram-caption">{{ lesson.diagram_caption }}</p>
       </div>
+      {% endif %}
 
       <!-- Number chart (lesson 1 only) -->
       {% if lesson.number_chart %}
@@ -607,20 +654,30 @@
       </div>
       {% endif %}
 
-      <!-- Diagram -->
-      {% if lesson.diagram %}
-      <div class="diagram-block">
-        <img src="{{ url_for('static', filename=lesson.diagram) }}" alt="False 9 formation diagram" class="diagram-img">
-        <p class="diagram-caption">{{ lesson.diagram_caption }}</p>
-      </div>
-      {% endif %}
-
       <!-- Body -->
       <div class="lesson-body">
         {% for paragraph in lesson.body %}
           <p>{{ paragraph | safe }}</p>
         {% endfor %}
       </div>
+
+      {% if lesson.video_embed %}
+      <div class="video-block">
+        <div class="video-frame-wrap">
+          <iframe
+            src="{{ lesson.video_embed }}"
+            title="YouTube video player"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+        {% if lesson.video_caption %}
+        <p class="video-caption">{{ lesson.video_caption }}</p>
+        {% endif %}
+      </div>
+      {% endif %}
 
       <!-- Key Idea -->
       <div class="key-idea">

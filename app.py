@@ -8,87 +8,95 @@ LESSONS = [
     {
         "id": 1,
         "title": "Soccer Positions 101",
-        "subtitle": "Understanding the numbered system before anything else",
+        "subtitle": "Start with jersey numbers before you study tactics.",
         "body": [
-            "Before you can understand the False 9, you need to understand how soccer positions work. Every player on the field has a role, and traditionally those roles are associated with <strong>jersey numbers</strong> — a system that dates back to the early days of the sport.",
-            "In modern soccer, a team fields <strong>11 players</strong>. These players are divided into three main groups: <em>defenders</em>, <em>midfielders</em>, and <em>forwards</em> (also called attackers). Each group has a different area of the pitch to cover and a different job to do.",
-            "The <strong>goalkeeper (#1)</strong> is the last line of defense — the only player allowed to use their hands, guarding the goal. Then come the <strong>defenders (#2–#6)</strong>, whose primary job is to stop the other team from scoring. In the middle you have the <strong>midfielders (#6–#8)</strong>, who connect defense to attack and control the tempo of the game. Finally, the <strong>forwards (#7–#11)</strong> are the attacking players tasked with creating chances and scoring goals.",
-            "These numbers aren't random — they reflect a player's role on the pitch. A #4 is typically a central defensive midfielder. A #10 is the creative playmaker behind the strikers. And the <strong>#9</strong>? That's the center forward — the main striker, the goal scorer, the player whose job is to put the ball in the net."
+            "You should understand soccer positions before you study the False 9. Each player has a role. For a long time, people have mapped those roles to <strong>jersey numbers</strong>. The mapping started early in soccer history.",
+            "A soccer team puts <strong>11 players</strong> on the field. They split into three large groups: <em>defenders</em>, <em>midfielders</em>, and <em>forwards</em>. People also call forwards attackers. Each group works a different part of the field.",
+            "The <strong>goalkeeper (#1)</strong> guards the net. Only the keeper may use hands inside the box in normal play. <strong>Defenders</strong> often wear numbers from #2 through #6. They try to stop goals. <strong>Midfielders</strong> around #6 through #8 link defense to attack. They help set the speed of the game. <strong>Forwards</strong> around #7 through #11 attack. They try to score and set up goals.",
+            "The numbers are not random. They hint at the job on the field. A #4 is often a defensive midfielder. A #10 is often a playmaker behind the strikers. The <strong>#9</strong> is usually the center forward. That player is the main striker. The job is to score."
         ],
-        "diagram": None,
+        "diagram": "numberedpossoccer.jpg",
+        "diagram_caption": "The chart shows how numbers sit on a typical field. Coaches still use this language when they talk about shape.",
         "number_chart": True,
         "visual": "🔢",
-        "visual_caption": "Numbers 1–11 map to specific roles — from goalkeeper to striker",
-        "key_idea": "Soccer positions follow a numbered system. Defenders protect the goal (#1–5), midfielders control the game (#6–8), and forwards attack (#9–11)."
+        "visual_caption": "Numbers 1 through 11 still point to familiar jobs, from keeper to striker.",
+        "key_idea": "Soccer uses a numbered map. Defenders guard the goal area. Midfielders connect lines. Forwards lead the attack."
     },
     {
         "id": 2,
         "title": "The Traditional Number 9",
-        "subtitle": "What a striker is actually supposed to do",
+        "subtitle": "What coaches expect from a classic striker.",
         "body": [
-            "The <strong>number 9</strong> is one of the most iconic positions in soccer. Historically, it belongs to the center forward — the player who lines up highest on the pitch, closest to the opponent's goal. Their job is brutally simple: <em>score goals</em>.",
-            "A traditional #9 is physical, strong in the air, and good at holding up the ball with their back to goal. They act as a target for long passes and crosses. Think of players like <strong>Didier Drogba, Zlatan Ibrahimović, or Robert Lewandowski</strong> — big, powerful strikers who dominate defenders and finish chances.",
-            "The #9 stays in the opponent's half for most of the game. They don't drop deep to help in midfield — that's not their job. Their job is to be a constant <strong>threat near the goal</strong>, occupying center-backs, winning headers, and converting chances when they come.",
-            "The entire team is often built around serving the #9. Wingers (the #7 and #11) cross the ball into the box. Midfielders (the #8 and #10) play passes into their feet. The #9 is the final destination of the attack — the player who finishes the move.",
-            "Understanding this traditional role is key — because the <strong>False 9</strong> breaks every single one of these expectations."
+            "The <strong>number 9</strong> is the classic center forward. That player lines up closest to the other team's goal. The main job is simple: <em>score goals</em>.",
+            "A traditional #9 is strong and good in the air. They hold the ball with their back to goal. They give long passes and crosses a target. Think of <strong>Didier Drogba, Zlatan Ibrahimović, or Robert Lewandowski</strong>. They are big strikers who finish chances and bother defenders.",
+            "A #9 spends most of the match in the attacking half. They usually do not drop deep to play like a midfielder. They stay a <strong>threat near the goal</strong>. They challenge center-backs. They win headers. They turn half chances into shots.",
+            "Teams often build attacks around the #9. Wingers such as #7 and #11 cross into the box. Midfielders feed the striker. The #9 is often the last player the ball finds before a shot.",
+            "Academies train classic nines with work near the goal. Drills repeat crosses, cutbacks, rebounds, headers, and shots under pressure. Coaches want strength and fitness so the striker can duel with defenders all game.",
+            "Training does not focus on dribbling from midfield. It focuses on instincts near the goal. Read the lane. Attack crosses. Finish before the keeper is set. The clip on this page shows that kind of repetition.",
+            "Keep this picture in mind. A <strong>False 9</strong> later breaks most of these habits on purpose."
         ],
         "diagram": "false9_diagram.png",
-        "diagram_caption": "A traditional #9 stays high near the opponent's goal. Notice where the 'False 9' label appears in this diagram — much deeper than expected.",
+        "diagram_caption": "The diagram shows a normal #9 high up the field. The False 9 label sits much deeper. That gap is the whole story.",
+        "video_embed": "https://www.youtube.com/embed/uQasbpSFFcU",
+        "video_caption": "This type of session builds habits around the box. It is not about roaming midfield like a playmaker.",
         "visual": "🎯",
-        "visual_caption": "The #9: stay high, receive the ball, score goals — simple in theory",
-        "key_idea": "A traditional #9 is a physical, goal-hungry striker who stays near the opponent's goal and acts as the final target of every attack."
+        "visual_caption": "Stay high, get service, finish. That is the textbook job.",
+        "key_idea": "A traditional #9 lives near the goal, leads the line, and finishes what the team builds."
     },
     {
         "id": 3,
         "title": "What Is a False 9?",
-        "subtitle": "When the striker refuses to stay up front",
+        "subtitle": "A striker who steps back on purpose.",
         "body": [
-            "Now that you know what the #9 is supposed to do, here's where it gets interesting. The <strong>False 9</strong> is a striker who deliberately breaks those expectations. Instead of staying high near the opponent's goal, the False 9 <em>drops deep into midfield</em> to collect the ball, link play, and create chances.",
-            "The 'False' in the name refers to the deception: when the number 9 drops deep, they become false — they're not where a #9 should be. Defenders who are trained to mark the striker suddenly don't know where to look.",
-            "The center-back faces an impossible decision. <strong>If they follow</strong> the False 9 into midfield, they leave a massive gap behind them — empty space that attacking midfielders can run into. <strong>If they don't follow</strong>, the False 9 picks up the ball with time and space to create danger. Either way, the defense is in trouble.",
-            "This is the genius of the position: the act of <em>not being where you're supposed to be</em> is itself an attacking weapon. By simply moving away from goal, the False 9 creates chaos in the opponent's defensive shape without even touching the ball."
+            "You now know how a normal #9 behaves. A <strong>False 9</strong> breaks those rules on purpose. They do not stay high near the other goal. They <em>drop toward midfield</em> to get the ball, connect passes, and help create chances.",
+            "The word False is about misdirection. The shirt still says nine, but the player is not standing where a nine usually stands. Markers get confused because their training tells them to watch a high striker.",
+            "The center-back must choose. <strong>If the defender follows</strong> the False 9, space opens behind the line. Attackers can run into that space. <strong>If the defender stays home</strong>, the False 9 can receive with time and room. Both choices hurt the defense.",
+            "Moving away from the goal is the trick. The shape of the defense breaks before the False 9 even passes. <em>Not being where people expect</em> becomes a real weapon."
         ],
-        "diagram": None,
+        "diagram": "false9example.png",
+        "diagram_caption": "The False 9 checks into midfield. That pull can drag defenders and free runners behind them.",
         "visual": "💡",
-        "visual_caption": "Drop deep → defenders confused → space opens up → attack succeeds",
-        "key_idea": "The False 9 drops deep into midfield instead of staying up front, forcing defenders into impossible decisions and creating space for teammates."
+        "visual_caption": "Step back, stress the line, let teammates attack the space you opened.",
+        "key_idea": "A False 9 trades a high position for pockets of space. That choice forces bad answers from defenders and helps teammates run into gaps."
     },
     {
         "id": 4,
         "title": "Messi & Guardiola: The Blueprint",
-        "subtitle": "How Barcelona made the False 9 famous",
+        "subtitle": "How Barcelona showed the world this role.",
         "body": [
-            "The modern False 9 was popularized by <strong>Pep Guardiola</strong> at Barcelona starting in the 2008–09 season. Guardiola needed to fit Lionel Messi into his system — Messi was too talented to be a winger, but Samuel Eto'o was the established #9. The solution: play Messi as a striker who doesn't act like one.",
-            "The results were historic. Barcelona's <strong>6–2 win over Real Madrid</strong> at the Bernabéu in May 2009 shocked the world. Messi dropped between the lines, collecting the ball from deep, and Madrid's center-backs had no idea whether to follow him or hold their position. They chose wrong every time.",
-            "<strong>Why Messi was the perfect False 9:</strong> His close control let him receive in tight spaces. His vision let him pick the right pass. His acceleration allowed him to drive forward once he had the ball. And because he was a genuine goal threat, defenders couldn't simply ignore him — they had to follow, and that following opened up the spaces Barcelona needed.",
-            "Guardiola's system required every player to understand their role. The wingers (Henry, then Villa) stayed wide and made forward runs into the space Messi vacated. Midfielders like Xavi and Iniesta kept the ball moving quickly. The whole system was a machine — and Messi as False 9 was the engine."
+            "<strong>Pep Guardiola</strong> made the modern False 9 famous at Barcelona. That work started in the 2008-09 season. Messi was too good to stay wide forever. Samuel Eto'o still played like a classic #9. Guardiola solved the puzzle by using Messi as a striker who did not stay on the last line.",
+            "The team had huge results. In May 2009 Barcelona beat Real Madrid <strong>6-2</strong> at the Bernabéu. Messi picked up the ball between the lines. Madrid's center-backs did not know whether to step out or hold the line. They kept guessing wrong.",
+            "Messi fit the role because he could receive in tight space. He could see passes early. He could accelerate with the ball. Defenders still had to respect his shot. They could not leave him alone. When they followed him, Barcelona had room elsewhere.",
+            "Everyone else had a job too. Wingers such as Henry and later Villa stayed wide and ran forward when Messi dropped. Midfielders like Xavi and Iniesta moved the ball quickly. The team needed all of those pieces to work together."
         ],
         "diagram": None,
+        "video_embed": "https://www.youtube.com/embed/JPeI419Qd0g",
+        "video_caption": "This clip shows how Guardiola used Messi in that free central role.",
         "visual": "🏆",
-        "visual_caption": "Messi at Barcelona 2008–2012 — the False 9 at its historical peak",
-        "key_idea": "Guardiola's Barcelona used Messi as a False 9 to create the most dominant team of the era, winning La Liga, the Champions League, and every major title."
+        "visual_caption": "Messi at Barcelona from 2008 to 2012 is still the famous example.",
+        "key_idea": "Guardiola let Messi play as a False 9 during one of the strongest club runs ever. The team won La Liga, the Champions League, and more."
     },
     {
         "id": 5,
         "title": "The False 9 Today",
-        "subtitle": "Legacy, evolution, and where it lives now",
+        "subtitle": "The idea did not disappear. It just spread out.",
         "body": [
-            "The classic Guardiola-era False 9 is less common today — defenses have studied it, adapted to it, and developed counter-strategies like using a midfielder to man-mark the False 9 instead of a center-back, preventing the defensive line from being dragged out of position.",
-            "But the ideas behind the False 9 are <em>everywhere</em> in modern football. The <strong>inverted winger</strong> (like Mohamed Salah or Arjen Robben) uses similar principles — cutting inside from wide positions to create numerical advantages. The <strong>second striker</strong> in a 4-4-2 borrows the deep-dropping movement. Even modern playmakers like Kevin De Bruyne and Bruno Fernandes play with False 9-like tendencies.",
-            "Guardiola himself has revived it at Manchester City when lacking a natural striker — deploying <strong>Bernardo Silva</strong> and even De Bruyne in the role with great success. The position rewards intelligence and technical quality over raw physicality.",
-            "The deeper legacy of the False 9 is philosophical: it proved that <strong>space is more valuable than presence</strong>. A striker who drops deep and drags defenders with them can be more dangerous than one who simply stands at the back post waiting for a cross. That idea — that absence creates opportunity — has permanently changed how coaches think about attacking football."
+            "You see the pure Guardiola copy less often now. Teams have watched the film. Some coaches send a midfielder to track the False 9 so the center-backs do not have to step out alone.",
+            "The ideas still show up all over the game. An <strong>inverted winger</strong> such as Mohamed Salah or Arjen Robben cuts inside to find extra numbers. A <strong>second striker</strong> in a 4-4-2 also drops to link play. Playmakers like Kevin De Bruyne or Bruno Fernandes sometimes take up similar spaces even if the lineup card says something else.",
+            "Guardiola still uses the idea at Manchester City when he lacks a tall target forward. He has used <strong>Bernardo Silva</strong> and De Bruyne in that kind of role. Brains and touch matter as much as size.",
+            "The big lesson is simple. <strong>Space can beat static presence.</strong> A striker who steps back and pulls markers can open the game for everyone else. Coaches still teach that lesson even when they never use the words False 9."
         ],
         "diagram": None,
         "visual": "🌍",
-        "visual_caption": "From Barcelona 2009 to a global tactical philosophy",
-        "key_idea": "The False 9 evolved into the DNA of modern football — its principles of space creation and positional fluidity appear in every top team today."
+        "visual_caption": "What started in Barcelona now shows up in many shapes around the world.",
+        "key_idea": "Modern teams borrow the same idea: move off the chalkboard, drag defenders, and let teammates run into the holes."
     }
 ]
 
 QUIZ = [
     {
         "id": 1,
-        "question": "What jersey number is traditionally associated with the center forward — the main striker?",
+        "question": "Which jersey number is usually worn by the main center forward, the classic striker?",
         "options": [
             "#7",
             "#10",
@@ -96,47 +104,47 @@ QUIZ = [
             "#11"
         ],
         "answer": 2,
-        "explanation": "The #9 is the traditional center forward. It's one of the most iconic numbers in soccer, associated with physical goal-scoring strikers like Lewandowski, Drogba, and Ibrahimović."
+        "explanation": "The #9 is the traditional striker number. Fans still link it to goal scorers such as Lewandowski, Drogba, and Ibrahimović."
     },
     {
         "id": 2,
-        "question": "What does the 'False' in False 9 mean?",
+        "question": "What does the word False mean in False 9?",
         "options": [
             "The player is pretending to be injured",
             "The player wears the wrong jersey number",
-            "The striker is not where a traditional #9 would be — they drop deep instead of staying up front",
-            "The position was invented as a trick that only works once"
+            "The striker is not standing where a normal #9 stands. They drop deep instead of staying high",
+            "The trick only works one time in a match"
         ],
         "answer": 2,
-        "explanation": "The 'False' refers to the deception — the #9 isn't where defenders expect them to be. By dropping into midfield, they break the rules defenders are trained to follow."
+        "explanation": "False means misdirection. The player still wears nine, but they show up between the lines. Defenders train for a high striker, so the change causes problems."
     },
     {
         "id": 3,
-        "question": "What happens when a center-back chooses NOT to follow the False 9 as they drop deep into midfield?",
+        "question": "What happens if a center-back does not follow the False 9 when the nine drops into midfield?",
         "options": [
-            "The False 9 goes offside",
-            "The False 9 picks up the ball with time and space to create danger",
-            "The defense automatically wins",
-            "The wingers are forced to defend"
+            "The False 9 is always offside",
+            "The False 9 can get the ball with time and room to hurt the defense",
+            "The defense always wins the ball",
+            "The wingers must drop to defend"
         ],
         "answer": 1,
-        "explanation": "If the center-back doesn't follow, the False 9 receives the ball in space between the lines. With time and space, they can turn, drive forward, or play a pass that splits the defense — creating a dangerous attacking opportunity."
+        "explanation": "If nobody steps out, the False 9 receives in a pocket. They can turn, run at the goal, or play a splitting pass. That is why teams cannot always stay passive."
     },
     {
         "id": 4,
-        "question": "When a False 9 drops deep and a center-back follows them, what happens?",
+        "question": "What happens when a center-back follows the False 9 into midfield?",
         "options": [
-            "The False 9 scores a goal immediately",
-            "A large gap opens up behind the center-back that attacking midfielders can exploit",
-            "The offside trap is triggered",
-            "Nothing changes — the defense stays organized"
+            "The False 9 scores right away every time",
+            "Space opens behind the defender for other attackers to exploit",
+            "The offside trap always works",
+            "Nothing changes and the defense looks fine"
         ],
         "answer": 1,
-        "explanation": "When a center-back follows the False 9 into midfield, they vacate their defensive position. This creates a gap behind them — exactly the space midfielders like Xavi and Iniesta would run into."
+        "explanation": "When a center-back chases the nine, somebody has to cover the lane they left open. Attackers timed those runs famously at Barcelona with players like Xavi and Iniesta."
     },
     {
         "id": 5,
-        "question": "Which manager is most famous for perfecting the False 9 with Lionel Messi?",
+        "question": "Which coach is most tied to Lionel Messi playing as a False 9 at Barcelona?",
         "options": [
             "Jose Mourinho",
             "Diego Simeone",
@@ -144,7 +152,20 @@ QUIZ = [
             "Pep Guardiola"
         ],
         "answer": 3,
-        "explanation": "Pep Guardiola used Messi as a False 9 at Barcelona from 2008, creating one of the most dominant sides in football history and introducing the tactic to the world stage."
+        "explanation": "Pep Guardiola used Messi in that roaming central role starting around 2008. Barcelona won major trophies and millions of fans saw how the shape worked."
+    },
+    {
+        "id": 6,
+        "question": "Look at the image. Pretend the circled player is your number nine. Based only on where they stand, are they acting like a traditional striker or like a False 9?",
+        "image": "quizquestionmessi.png",
+        "options": [
+            "False 9. They have come short between midfield and the back line to link play.",
+            "Traditional striker. They are glued on the last line waiting to run in behind.",
+            "Inverted winger. They started wide and cut in for a shot.",
+            "Box-to-box midfielder. They are making a late run from deep."
+        ],
+        "answer": 0,
+        "explanation": "A classic #9 holds the highest line near the center-backs. This player sits in the pocket between lines. That depth is what you expect from a False 9, not an old-school target man."
     }
 ]
 
@@ -250,6 +271,7 @@ def quiz_results():
         ans = answers.get(str(i + 1), {})
         results.append({
             "question": q["question"],
+            "image": q.get("image"),
             "correct_answer": q["options"][q["answer"]],
             "chosen_answer": q["options"][ans["chosen"]] if ans.get("chosen") is not None else "Not answered",
             "correct": ans.get("correct", False),

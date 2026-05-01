@@ -123,6 +123,32 @@
       margin-bottom: 32px;
     }
 
+    .quiz-q-image-wrap {
+      margin: -14px 0 28px;
+      padding: 14px;
+      background: #fafafa;
+      border: 1px solid var(--ash);
+      border-radius: 4px;
+    }
+
+    .quiz-q-image-wrap img {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      height: auto;
+      border-radius: 4px;
+      border: 1px solid var(--ash);
+    }
+
+    .quiz-q-image-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 10px;
+      line-height: 1.45;
+    }
+
     /* ── Options ── */
     .options {
       display: flex;
@@ -306,6 +332,13 @@
 
     <div class="q-label">Question {{ q_num }} of {{ total }}</div>
     <h1 class="q-text">{{ question.question }}</h1>
+
+    {% if question.image %}
+    <div class="quiz-q-image-wrap">
+      <img src="{{ url_for('static', filename=question.image) }}" alt="Quiz diagram: circled player position">
+      <p class="quiz-q-image-note">Use the circled player as your #9 when you choose an answer.</p>
+    </div>
+    {% endif %}
 
     <div class="options" id="options">
       {% for opt in question.options %}
