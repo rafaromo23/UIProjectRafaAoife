@@ -157,6 +157,33 @@
     }
     .result-card.correct .result-explanation { border-color: rgba(45,106,79,0.2); color: #333; }
 
+    .result-review {
+      margin-top: 12px;
+      padding-top: 12px;
+      padding-left: 24px;
+      border-top: 1px solid var(--ash);
+      font-size: 12px;
+    }
+
+    .result-review-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .result-review a {
+      color: var(--green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .result-review a:hover { text-decoration: underline; }
+
+    .result-review-row { margin-bottom: 4px; }
+
     .result-q-image {
       margin: 10px 0 0 24px;
       max-width: 320px;
@@ -267,6 +294,14 @@
             {% endif %}
           </div>
           <div class="result-explanation">{{ r.explanation }}</div>
+          {% if not r.correct and r.review %}
+          <div class="result-review">
+            <div class="result-review-label">Review this section before you try again</div>
+            {% for item in r.review %}
+            <div class="result-review-row"><a href="/learn/{{ item.num }}">Lesson {{ item.num }}: {{ item.title }}</a></div>
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
       {% endfor %}
     </div>

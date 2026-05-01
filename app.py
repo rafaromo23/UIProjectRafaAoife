@@ -104,7 +104,8 @@ QUIZ = [
             "#11"
         ],
         "answer": 2,
-        "explanation": "The #9 is the traditional striker number. Fans still link it to goal scorers such as Lewandowski, Drogba, and Ibrahimović."
+        "explanation": "The #9 is the traditional striker number. Fans still link it to goal scorers such as Lewandowski, Drogba, and Ibrahimović.",
+        "review_lesson_ids": [1],
     },
     {
         "id": 2,
@@ -116,7 +117,8 @@ QUIZ = [
             "The trick only works one time in a match"
         ],
         "answer": 2,
-        "explanation": "False means misdirection. The player still wears nine, but they show up between the lines. Defenders train for a high striker, so the change causes problems."
+        "explanation": "False means misdirection. The player still wears nine, but they show up between the lines. Defenders train for a high striker, so the change causes problems.",
+        "review_lesson_ids": [3],
     },
     {
         "id": 3,
@@ -128,7 +130,8 @@ QUIZ = [
             "The wingers must drop to defend"
         ],
         "answer": 1,
-        "explanation": "If nobody steps out, the False 9 receives in a pocket. They can turn, run at the goal, or play a splitting pass. That is why teams cannot always stay passive."
+        "explanation": "If nobody steps out, the False 9 receives in a pocket. They can turn, run at the goal, or play a splitting pass. That is why teams cannot always stay passive.",
+        "review_lesson_ids": [3],
     },
     {
         "id": 4,
@@ -140,7 +143,8 @@ QUIZ = [
             "Nothing changes and the defense looks fine"
         ],
         "answer": 1,
-        "explanation": "When a center-back chases the nine, somebody has to cover the lane they left open. Attackers timed those runs famously at Barcelona with players like Xavi and Iniesta."
+        "explanation": "When a center-back chases the nine, somebody has to cover the lane they left open. Attackers timed those runs famously at Barcelona with players like Xavi and Iniesta.",
+        "review_lesson_ids": [3],
     },
     {
         "id": 5,
@@ -152,7 +156,8 @@ QUIZ = [
             "Pep Guardiola"
         ],
         "answer": 3,
-        "explanation": "Pep Guardiola used Messi in that roaming central role starting around 2008. Barcelona won major trophies and millions of fans saw how the shape worked."
+        "explanation": "Pep Guardiola used Messi in that roaming central role starting around 2008. Barcelona won major trophies and millions of fans saw how the shape worked.",
+        "review_lesson_ids": [4],
     },
     {
         "id": 6,
@@ -165,9 +170,19 @@ QUIZ = [
             "Box-to-box midfielder. They are making a late run from deep."
         ],
         "answer": 0,
-        "explanation": "A classic #9 holds the highest line near the center-backs. This player sits in the pocket between lines. That depth is what you expect from a False 9, not an old-school target man."
+        "explanation": "A classic #9 holds the highest line near the center-backs. This player sits in the pocket between lines. That depth is what you expect from a False 9, not an old-school target man.",
+        "review_lesson_ids": [2, 3],
     }
 ]
+
+
+def _review_entries(lesson_ids):
+    """Build lesson links for wrong-answer study hints."""
+    out = []
+    for lid in lesson_ids or []:
+        if isinstance(lid, int) and 1 <= lid <= len(LESSONS):
+            out.append({"num": lid, "title": LESSONS[lid - 1]["title"]})
+    return out
 
 
 @app.route("/")
@@ -231,7 +246,7 @@ def quiz(q_num):
         next_num=q_num + 1,
         prev_num=q_num - 1,
         already_answered=already_answered,
-        chosen=chosen
+        chosen=chosen,
     )
 
 
@@ -256,7 +271,7 @@ def answer(q_num):
     return jsonify({
         "correct": correct,
         "correct_index": question["answer"],
-        "explanation": question["explanation"]
+        "explanation": question["explanation"],
     })
 
 
@@ -269,13 +284,15 @@ def quiz_results():
     results = []
     for i, q in enumerate(QUIZ):
         ans = answers.get(str(i + 1), {})
+        got_it_right = ans.get("correct", False)
         results.append({
             "question": q["question"],
             "image": q.get("image"),
             "correct_answer": q["options"][q["answer"]],
             "chosen_answer": q["options"][ans["chosen"]] if ans.get("chosen") is not None else "Not answered",
-            "correct": ans.get("correct", False),
-            "explanation": q["explanation"]
+            "correct": got_it_right,
+            "explanation": q["explanation"],
+            "review": [] if got_it_right else _review_entries(q.get("review_lesson_ids", [])),
         })
 
     return render_template("quiz_results.html", score=score, total=total, results=results)
