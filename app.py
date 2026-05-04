@@ -228,6 +228,9 @@ def quiz(q_num):
     if q_num < 1 or q_num > len(QUIZ):
         return redirect(url_for("home"))
 
+    if session.get("quiz_completed"):
+        return redirect(url_for("quiz_results"))
+
     question = QUIZ[q_num - 1]
 
     if "quiz_answers" not in session:
@@ -278,12 +281,15 @@ def answer(q_num):
 @app.route("/quiz/reset")
 def quiz_reset():
     session.pop("quiz_answers", None)
+    session.pop("quiz_completed", None)
     session.modified = True
     return redirect(url_for("quiz", q_num=1))
 
 
 @app.route("/quiz/results")
 def quiz_results():
+    session["quiz_completed"] = True
+    session.modified = True
     answers = session.get("quiz_answers", {})
     score = sum(1 for a in answers.values() if a.get("correct"))
     total = len(QUIZ)
