@@ -275,6 +275,13 @@ def answer(q_num):
     })
 
 
+@app.route("/quiz/reset")
+def quiz_reset():
+    session.pop("quiz_answers", None)
+    session.modified = True
+    return redirect(url_for("quiz", q_num=1))
+
+
 @app.route("/quiz/results")
 def quiz_results():
     answers = session.get("quiz_answers", {})
