@@ -111,10 +111,10 @@ QUIZ = [
         "id": 2,
         "question": "What does the word False mean in False 9?",
         "options": [
-            "The player is pretending to be injured",
+            "The striker drops into their own team's back line instead of staying up top",
             "The player wears the wrong jersey number",
-            "The striker is not standing where a normal #9 stands. They drop deep instead of staying high",
-            "The trick only works one time in a match"
+            "The striker drops into midfield instead of staying up top",
+            "The player creates the illusion of a central striker position"
         ],
         "answer": 2,
         "explanation": "False means misdirection. The player still wears nine, but they show up between the lines. Defenders train for a high striker, so the change causes problems.",
@@ -126,7 +126,7 @@ QUIZ = [
         "options": [
             "The False 9 is always offside",
             "The False 9 can get the ball with time and room to hurt the defense",
-            "The defense always wins the ball",
+            "The defensive line immediately loses its shape and collapses",
             "The wingers must drop to defend"
         ],
         "answer": 1,
@@ -137,9 +137,9 @@ QUIZ = [
         "id": 4,
         "question": "What happens when a center-back follows the False 9 into midfield?",
         "options": [
-            "The False 9 scores right away every time",
+            "The midfield becomes overloaded, giving the defending team more control",
             "Space opens behind the defender for other attackers to exploit",
-            "The offside trap always works",
+            "The defensive line becomes more compact and difficult to break down",
             "Nothing changes and the defense looks fine"
         ],
         "answer": 1,
