@@ -560,10 +560,10 @@
     }
   </style>
 </head>
-<body>
+<body data-lesson-num="{{ lesson_num }}">
 
   <!-- Global progress bar -->
-  <div class="top-progress" style="width: {{ (lesson_num / total) * 100 }}%"></div>
+  <div class="top-progress" data-progress="{{ (lesson_num / total) * 100 }}"></div>
 
   <!-- Mobile overlay -->
   <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
@@ -585,7 +585,7 @@
     <div class="sidebar-meta">
       <div class="sidebar-section-label">Progress — {{ lesson_num }} of {{ total }}</div>
       <div class="sidebar-progress-wrap">
-        <div class="sidebar-progress-fill" style="width: {{ (lesson_num / total) * 100 }}%"></div>
+        <div class="sidebar-progress-fill" data-progress="{{ (lesson_num / total) * 100 }}"></div>
       </div>
     </div>
 
@@ -712,7 +712,11 @@
       document.getElementById('sidebar-overlay').classList.remove('show');
     }
 
-    const lessonNum = {{ lesson_num }};
+    const lessonNum = Number(document.body.dataset.lessonNum || 0);
+    document.querySelectorAll('[data-progress]').forEach(el => {
+      const progress = Number(el.dataset.progress || 0);
+      el.style.width = `${progress}%`;
+    });
     const enteredAt = Date.now();
 
     document.querySelectorAll('.nav-btn').forEach(btn => {

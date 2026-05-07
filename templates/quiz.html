@@ -316,9 +316,13 @@
     }
   </style>
 </head>
-<body>
+<body
+  data-q-num="{{ q_num }}"
+  data-correct-index="{{ question.answer }}"
+  data-already-answered="{{ 1 if already_answered else 0 }}"
+>
 
-  <div class="top-progress" style="width: {{ (q_num / total) * 100 }}%"></div>
+  <div class="top-progress" data-progress="{{ (q_num / total) * 100 }}"></div>
 
   <nav class="topbar">
     <a href="/" class="topbar-logo">FALSE 9</a>
@@ -394,9 +398,13 @@
   </main>
 
   <script>
-    const Q_NUM = {{ q_num }};
-    const CORRECT_INDEX = {{ question.answer }};
-    const alreadyAnswered = {{ 'true' if already_answered else 'false' }};
+    const Q_NUM = Number(document.body.dataset.qNum || 0);
+    const CORRECT_INDEX = Number(document.body.dataset.correctIndex || -1);
+    const alreadyAnswered = document.body.dataset.alreadyAnswered === '1';
+    document.querySelectorAll('[data-progress]').forEach(el => {
+      const progress = Number(el.dataset.progress || 0);
+      el.style.width = `${progress}%`;
+    });
 
     const options = document.querySelectorAll('.option-btn');
     const explanation = document.getElementById('explanation');
