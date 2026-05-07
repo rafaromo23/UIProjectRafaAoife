@@ -148,12 +148,12 @@ QUIZ = [
     },
     {
         "id": 5,
-        "question": "Which coach is most tied to Lionel Messi playing as a False 9 at Barcelona?",
+        "question": "What is the biggest lesson that the false 9 position reveals about the game of soccer?",
         "options": [
-            "Jose Mourinho",
-            "Diego Simeone",
-            "Jurgen Klopp",
-            "Pep Guardiola"
+            "The best strikers are always the tallest",
+            "Space beats static presence",
+            "Possession matters more than movement",
+            "Defenders should always mark man-to-man"
         ],
         "answer": 3,
         "explanation": "Pep Guardiola used Messi in that roaming central role starting around 2008. Barcelona won major trophies and millions of fans saw how the shape worked.",
