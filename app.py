@@ -67,7 +67,7 @@ LESSONS = [
             "<strong>Pep Guardiola</strong> made the modern False 9 famous at Barcelona. That work started in the 2008-09 season. Messi was too good to stay wide forever. Samuel Eto'o still played like a classic #9. Guardiola solved the puzzle by using Messi as a striker who did not stay on the last line.",
             "The team had huge results. In May 2009 Barcelona beat Real Madrid <strong>6-2</strong> at the Bernabéu. Messi picked up the ball between the lines. Madrid's center-backs did not know whether to step out or hold the line. They kept guessing wrong.",
             "Messi fit the role because he could receive in tight space. He could see passes early. He could accelerate with the ball. Defenders still had to respect his shot. They could not leave him alone. When they followed him, Barcelona had room elsewhere.",
-            "Everyone else had a job too. Wingers such as Henry and later Villa stayed wide and ran forward when Messi dropped. Midfielders like Xavi and Iniesta moved the ball quickly. The team needed all of those pieces to work together."
+            "Everyone else had a job too. Wingers such as Henry and later Villa stayed wide and ran forward when Messi dropped. Midfielders like Xavi and Iniesta moved the ball quickly. The team needed all of those pieces to work together. Watch the first minute of the video below; it is important for the quiz. Watch the rest if you'd like."
         ],
         "diagram": None,
         "video_embed": "https://www.youtube.com/embed/JPeI419Qd0g",
@@ -111,10 +111,10 @@ QUIZ = [
         "id": 2,
         "question": "What does the word False mean in False 9?",
         "options": [
-            "The player is pretending to be injured",
+            "The striker drops into their own team's back line instead of staying up top",
             "The player wears the wrong jersey number",
-            "The striker is not standing where a normal #9 stands. They drop deep instead of staying high",
-            "The trick only works one time in a match"
+            "The striker drops into midfield instead of staying up top",
+            "The player creates the illusion of a central striker position"
         ],
         "answer": 2,
         "explanation": "False means misdirection. The player still wears nine, but they show up between the lines. Defenders train for a high striker, so the change causes problems.",
@@ -126,7 +126,7 @@ QUIZ = [
         "options": [
             "The False 9 is always offside",
             "The False 9 can get the ball with time and room to hurt the defense",
-            "The defense always wins the ball",
+            "The defensive line immediately loses its shape and collapses",
             "The wingers must drop to defend"
         ],
         "answer": 1,
@@ -137,9 +137,9 @@ QUIZ = [
         "id": 4,
         "question": "What happens when a center-back follows the False 9 into midfield?",
         "options": [
-            "The False 9 scores right away every time",
+            "The midfield becomes overloaded, giving the defending team more control",
             "Space opens behind the defender for other attackers to exploit",
-            "The offside trap always works",
+            "The defensive line becomes more compact and difficult to break down",
             "Nothing changes and the defense looks fine"
         ],
         "answer": 1,
@@ -148,12 +148,12 @@ QUIZ = [
     },
     {
         "id": 5,
-        "question": "Which coach is most tied to Lionel Messi playing as a False 9 at Barcelona?",
+        "question": "What is the biggest lesson that the false 9 position reveals about the game of soccer?",
         "options": [
-            "Jose Mourinho",
-            "Diego Simeone",
-            "Jurgen Klopp",
-            "Pep Guardiola"
+            "The best strikers are always the tallest",
+            "Defenders should always mark man-to-man",
+            "Possession matters more than movement",
+            "Space beats static presence"
         ],
         "answer": 3,
         "explanation": "Pep Guardiola used Messi in that roaming central role starting around 2008. Barcelona won major trophies and millions of fans saw how the shape worked.",
