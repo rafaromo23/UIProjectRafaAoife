@@ -1,8 +1,5 @@
-\# Team Members
+# Team Members
 
-
-
-\- Aoife Turner — aoifeturner
-
-\- Rafa Romo — rafaromo23
+- Aoife Turner — aoifeturner
+- Rafa Romo — rafaromo23
 
